@@ -1,0 +1,11 @@
+.idea/
+.vscode/
+app/media/
+app/core/__pycache__/
+app/core/migrations/__pycache__/
+app/room/__pycache__/
+app/room/migrations/__pycache__/
+app/videochat/__pycache__/
+app/videochat/migrations/__pycache__/
+*.pyc
+.DS_Store

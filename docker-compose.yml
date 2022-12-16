@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    django:
+        build: .
+        container_name: django-chat
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./app:/usr/src/app:delegated
+        ports:
+            - "8000:8000"
+    redis:
+        container_name: redis-chat
+        image: "redis:alpine"
+        ports:
+            - "6379:6379"

@@ -1,0 +1,68 @@
+{% extends 'chat/template.html' %}
+{% load static %}
+
+{% block content %}
+<form id="login-chat-container" class="g-3 needs-validation" novalidate>
+    <h1 class="d-flex justify-content-center p-3">login</h1>
+    <div class="row">
+        <div class="form-floating mb-3">
+            <input id="username" name="username" pattern="[a-zA-Z0-9_]+" class="form-control" placeholder="username" minlength="3" maxlength="30" required />
+            <label for="username">Username</label>
+            <div class="invalid-feedback">
+                Please choose an username, at least 3 chars, only chars and numbers
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-floating mb-3 col-sm-3">
+            <select name="gender" id="gender" class="form-control" required>
+                <option value="0">?</option>
+                <option value="1">Man</option>
+                <option value="2">Woman</option>
+            </select>
+            <label for="gender">Gender</label>
+        </div>
+        <div class="form-floating mb-3 col-sm-3">
+            <input id="age" name="age" class="form-control" placeholder="your age" pattern="[\d]{2}" type="number" min="18" max="99" maxlength="2" required />
+            <label for="username">Age</label>
+            <div class="invalid-feedback">
+                only adults >17
+            </div> 
+        </div>
+        <div class="form-floating mb-3 col-sm-6">
+            <select name="room" id="room" class="form-control" required >
+            {% for room in rooms %}
+                <option value="{{ room.slug }}">{{ room.name }} - ({{ room.get_online_count }})</option>
+            {% endfor %}
+            </select>
+            <label for="room">Select a chatroom</label>
+        </div>
+        <div class="form-floating mb-3">
+            <button id="join-button" class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </div>
+    </div>
+</form>
+<div id="chat-container">
+    <div id="chat">
+        <div class="row">
+            <h5 id="chat-topic">ChatApp</h5>
+        </div>
+        <div class="row">
+            <div id="userlist-wrapper" class="col-sm-3">
+                <div id="user-list"></div>
+            </div>
+            <div id="chatboard-wrapper" class="col-sm-9">
+                <div id="chatboard"></div>
+            </div>
+        </div>
+    </div>
+    <div id="chat-inputs" class="d-flex p-3 g-3">
+        <input id="chat-message-input" class="form-control me-2" aria-label="Write a message">
+        <button id="chat-send-button" class="btn btn-outline-success" type="submit">Send</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

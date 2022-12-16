@@ -1,0 +1,7 @@
+Django==4.0
+channels==3.0.4
+sqlparse>=0.2.2
+daphne<4,>=3.0
+channels_redis==3.3.1
+cryptography==3.4.6
+Pillow==5.0

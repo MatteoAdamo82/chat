@@ -1,0 +1,80 @@
+
+body {
+    background-color:teal;
+}
+
+#chatboard-wrapper,
+#user-list-wrapper
+{
+   height: 400px;
+   overflow-y:scroll;
+}
+
+#chat-container,
+#login-chat-container
+{
+    background-color: #FFF;
+    border-radius: 10px;
+    color: teal;
+    margin-top: 2.5em;
+    padding: 1em;
+}
+
+#join-button 
+{
+    background-color: teal;
+}
+
+#chatboard p.user-message
+ {
+    border-radius: 10px;
+    color: #FFF;
+    padding:10px;
+    background-color: darkcyan;
+}
+
+#chatboard p.my-message {
+    background-color:slategrey;
+}
+
+#chatboard p.o {
+    background-color: darkcyan;
+}
+
+#chatboard p span
+{
+    font-weight: bold;
+}
+
+#chatboard p.log-message span
+{
+    background-color: #EFEFEF;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 2px 5px;
+};
+
+#chatboard p.my_message {
+    background-color:darkkhaki;
+    float: right;
+}
+
+#user-list p.gender-1
+{
+    color: #0d9efd;
+}
+
+#user-list p.gender-2
+{
+    color:#ad22b2;
+}
+
+.form-floating>label {
+    left: 10px;
+}
+
+.material-symbols-outlined {
+    display: inline-flex;
+    vertical-align: top;
+    font-variation-settings: 'FILL' 0,'wght' 400, 'GRAD' 200, 'opsz' 24;
+}
