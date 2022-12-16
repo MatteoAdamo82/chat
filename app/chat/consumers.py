@@ -100,15 +100,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             user.uuid = uuid
             user.save()
             room.join(chatuser=user)
-
-            self.channel_layer.group_send(
-                self.room_group_name,
-                {
-                    'type': 'user_leave',
-                    'user': username,
-                }
-            )
-
+            
             return True
 
         return False
